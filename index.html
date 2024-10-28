@@ -1,0 +1,1109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Testeándolo todo: testing más allá de PHPUnit</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" />
+    <link
+      href="https://fonts.cdnfonts.com/css/liberation-sans"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <div class="cover-logo">
+          <a href="/">
+            <img
+              src="./assets/images/event-logo-transparent.png"
+              alt="Event logo"
+            />
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="reveal">
+      <div class="slides">
+        <section
+          data-state="cover"
+          data-background-image="./assets/images/decoration-right-beach-drop-transparent.png"
+          data-background-size="25%"
+          data-background-position="95% 50%"
+        >
+          <div>
+            <div class="title">
+              <h1 class="xxlarge">
+                Testeándolo todo: testing más allá de PHPUnit
+              </h1>
+              <h2 class="xlarge">Ricardo Sanz Ante</h2>
+            </div>
+          </div>
+        </section>
+
+        <section
+          data-state="authors"
+          data-background-image="./assets/images/decoration-right-beach-drop-transparent.png"
+          data-background-size="25%"
+          data-background-position="95% 50%"
+        >
+          <div class="ice-breaking">
+            <article class="panel">
+              <img
+                src="./assets/images/sanzante.jpg"
+                width="100px"
+                height="100px"
+                alt="Ricardo Sanz"
+              />
+              <h2>Ricardo Sanz</h2>
+              <h3>DevOps y desarrollo Drupal y Angular</h3>
+              <h4>Software libre y música rara</h4>
+              <a href="https://drupal.org/u/tunic" target="_blank">
+                drupal.org/u/tunic
+              </a>
+            </article>
+          </div>
+          <br />
+          <a href="https://metadrop.net" target="_blank">
+            <img src="./assets/images/metadrop-logo.svg" width="350" />
+          </a>
+        </section>
+
+        <section
+          data-state="chapter"
+          data-auto-animate
+          data-background-color="#e8f7fc"
+          data-background-image="./assets/images/deco-right-bottom.png"
+          data-background-size="12%"
+          data-background-position="right bottom"
+        >
+          <h1>Recorrido</h1>
+        </section>
+
+        <section data-auto-animate>
+          <h1>Recorrido</h1>
+          <ol class="small">
+            <li class="fragment fade-in">Introducción</li>
+            <li class="fragment fade-in">¿Cómo testear?</li>
+            <li class="fragment fade-in">Más allá de PHPUnit</li>
+            <li class="fragment fade-in">Cuándo y dónde testear</li>
+            <li class="fragment fade-in">Implementar</li>
+          </ol>
+        </section>
+
+        <section
+          data-state="chapter"
+          data-background-image="./assets/images/deco-right-bottom.png"
+          data-background-size="12%"
+          data-background-position="right bottom"
+          data-background-color="#e8f7fc"
+        >
+          <h1>Introducción</h1>
+        </section>
+
+        <section data-state="content">
+          <h1>Introducción</h1>
+          <h2>¿Por qué testear?</h2>
+          <ul>
+            <li>Paz de espíritu</li>
+            <li>Funcionalidades sólidas</li>
+            <li>Detección y corrección temprana de errores</li>
+            <li>Trabajar con redes seguridad</li>
+            <li>Tardes y fines de semana sin sobresaltos</li>
+            <li>Ahorro de tiempo a medio y largo plazo</li>
+            <li>Paz de espíritu</li>
+          </ul>
+        </section>
+
+        <section
+          data-state="content"
+          data-background-image="assets/images/img01-Drupal-tests.png"
+          data-background-size="20%"
+          data-background-position="95% 50%"
+        >
+          <h1>Introducción</h1>
+          <h2>Tests <em>nativos</em> de Drupal</h2>
+
+          <ul>
+            <li>Unit tests</li>
+            <li>Kernel tests</li>
+            <li>Tests funcionales</li>
+            <li>Tests funcionales de JavaScript</li>
+            <li>Nightwatch</li>
+          </ul>
+        </section>
+
+        <section
+          data-state="content"
+          data-background-size="20%"
+          data-background-position="95% 50%"
+        >
+          <h1>Introducción</h1>
+          <h2>Más allá de PHPUnit</h2>
+
+          <ul>
+            <li>Análisis de código estático</li>
+            <li>Paquetería (seguridad y actualizaciones)</li>
+            <li>Tests de aceptación</li>
+            <li>Tests de regresión visual</li>
+            <li>Accesibilidad</li>
+            <li>Rendimiento, calidad y corrección</li>
+            <li>API internas y externas</li>
+            <li>Cabeceras HTTP</li>
+            <li>Tests de humo</li>
+            <li>Pruebas de despliegue</li>
+          </ul>
+        </section>
+
+        <section
+          data-state="content"
+          data-background-size="20%"
+          data-background-position="95% 50%"
+        >
+          <h1>Introducción</h1>
+          <h2>Qué testear</h2>
+
+          <ul>
+            <li>Entorno local</li>
+            <li>CI</li>
+            <li>Entorno de producción</li>
+            <li>Elementos externos de los que se depende</li>
+          </ul>
+        </section>
+
+        <section
+          data-state="chapter"
+          data-background-image="./assets/images/deco-right-bottom.png"
+          data-background-size="12%"
+          data-background-position="right bottom"
+          data-background-color="#e8f7fc"
+        >
+          <h1>Cómo testear</h1>
+        </section>
+
+        <section
+          data-state="content"
+          data-auto-animate
+          data-auto-animate-id="copia-prod"
+        >
+          <h1>Cómo testear</h1>
+          <h2>Copia de producción</h2>
+          <div><strong>Ventajas</strong></div>
+
+          <ul>
+            <li>
+              Contenido para probar todas las funcionalidades (con el tiempo)
+            </li>
+            <li>Contenido actualizado</li>
+            <li>Configuración real</li>
+            <li>Es posible probar casos especiales solo en producción</li>
+            <li>
+              Relativamente fácil de implementar... ignorando sus problemas
+            </li>
+          </ul>
+        </section>
+
+        <section
+          data-state="content"
+          data-auto-animate
+          data-auto-animate-id="copia-prod"
+        >
+          <h1>Cómo testear</h1>
+          <h2>Copia de producción</h2>
+          <div><strong>Problemas</strong></div>
+
+          <ul>
+            <li>Los tests automáticos necesitan contenido que no cambie</li>
+            <li>Requiere sanitización de datos</li>
+            <li>Usa configuración real</li>
+            <li>Requiere conexión con producción</li>
+            <li>Proyectos con muchos datos</li>
+            <li>Tiempo de <em>set up</em> muy largo con proyectos grandes</li>
+          </ul>
+        </section>
+
+        <section
+          data-state="content"
+          data-auto-animate
+          data-auto-animate-id="insalar-sitio"
+        >
+          <h1>Cómo testear</h1>
+          <h2>Instalar sitio y contenido de test</h2>
+          <div>
+            Instalar sitio desde configuración y cargar contenido de prueba
+          </div>
+          <br />
+          <div><strong>Ventajas</strong></div>
+          <ul>
+            <li>Sin problemas de seguridad ni privacidad</li>
+            <li>Contenido controlado, sin cambios inesperados</li>
+            <li>Configuración controlada</li>
+            <li>Modo completamente drupalero</li>
+            <li>Tamaños de datos pequeño</li>
+            <li>Tiempo de <em>set up</em> corto y predecible</li>
+          </ul>
+        </section>
+
+        <section
+          data-state="content"
+          data-auto-animate
+          data-auto-animate-id="insalar-sitio"
+        >
+          <h1>Cómo testear</h1>
+          <h2>Instalar sitio y contenido de test</h2>
+          <div><strong>Problemas</strong></div>
+
+          <ul>
+            <li>Las funcionalidades requieren un contenido</li>
+            <li>El contenido debe esta formalizado y mantenerse</li>
+            <li>Probar errores solo de producción es maś difícil</li>
+            <li>Más espartano que producción</li>
+          </ul>
+        </section>
+
+        <section
+          data-state="content"
+          data-auto-animate
+          data-auto-animate-id="insalar-sitio"
+        >
+          <h1>Cómo testear</h1>
+          <h2>Instalar sitio y contenido de test</h2>
+          <div><strong>Implementación</strong></div>
+
+          <ul>
+            <li>Instalar sitio e importar configuración</li>
+            <li>Config Split (o sobreescritura de configuración)</li>
+            <li>Exportar contenido creado manualmente con Default Content</li>
+            <li>Importar contenido con Default Content</li>
+            <li>Reusar contenido usado pare desarollar funcionalidad</li>
+          </ul>
+        </section>
+
+        <section
+          data-state="chapter"
+          data-background-image="./assets/images/deco-right-bottom.png"
+          data-background-size="12%"
+          data-background-position="right bottom"
+          data-background-color="#e8f7fc"
+        >
+          <h1>Más allá de PHP Unit</h1>
+        </section>
+
+        <section
+          data-state="content"
+          data-auto-animate
+          data-auto-animate-id="analisis-estatico-codigo"
+        >
+          <h1>Más allá de PHP Unit</h1>
+          <h2>Análisis estático de código</h2>
+          <ul>
+            <li>Detección de <em>bugs</em></li>
+            <li>Código fuera de los <em>coding standards</em></li>
+            <li>Malas prácticas</li>
+            <li>Complejidad ciclomática</li>
+            <li>CSS, PHP, JavaScript...</li>
+          </ul>
+        </section>
+
+        <section
+          data-state="content"
+          data-auto-animate
+          data-auto-animate-id="analisis-estatico-codigo"
+        >
+          <h1>Más allá de PHP Unit</h1>
+          <h2>Análisis estático de código</h2>
+          <div><strong>Herramientas</strong></div>
+          <ul>
+            <li>PHPStan</li>
+            <li>phpcs</li>
+            <li>phpmd</li>
+            <li>linters (parallel-lint)</li>
+          </ul>
+        </section>
+
+        <section>
+          <div>phpmd</div>
+          <img src="./assets/images/img11-phpmd.png" />
+        </section>
+
+        <section>
+          <div>phpcs</div>
+          <img src="./assets/images/img12-phpcs.png" />
+        </section>
+
+        <section
+          data-state="content"
+          data-auto-animate
+          data-auto-animate-id="analisis-estatico-codigo"
+        >
+          <h1>Más allá de PHP Unit</h1>
+          <h2>Análisis estático de código</h2>
+          <div><strong>¿Cuándo?</strong></div>
+          <ul>
+            <li>CI</li>
+            <li>Hooks pre-commit de Git</li>
+          </ul>
+        </section>
+
+        <section
+          data-state="content"
+          data-auto-animate
+          data-auto-animate-id="analisis-estatico-codigo"
+        >
+          <h1>Más allá de PHP Unit</h1>
+          <h2>Análisis estático de código</h2>
+          <div><strong>Facilitadores</strong></div>
+          <ul>
+            <li>phpqa</li>
+            <li>Grumphp</li>
+          </ul>
+        </section>
+
+        <section
+          data-state="content"
+          data-background-image="assets/images/img08-composer-audit.png"
+          data-background-position="98% 50%"
+          data-background-size="43%"
+          class="weight-left"
+          data-auto-animate-id="paqueteria-php"
+        >
+          <h1>Más allá de PHP Unit</h1>
+          <h2>Paquetería PHP</h2>
+          <ul>
+            <li>
+              Paquetes con problemas de seguridad
+              <pre>composer audit --locked</pre>
+            </li>
+
+            <li>
+              Paquetes actualizables
+              <pre>composer outdated --locked --strict</pre>
+            </li>
+            <li>Parches no aplicados</li>
+            <li>Módulos no instalados</li>
+          </ul>
+        </section>
+
+        <section
+          data-state="content"
+          data-auto-animate
+          data-auto-animate-id="paqueteria-php"
+        >
+          <h1>Más allá de PHP Unit</h1>
+          <h2>Paquetería PHP</h2>
+          <div><strong>¿Cuándo?</strong></div>
+          <ul>
+            <li>CI</li>
+            <li>
+              Determinar resultado
+              <ul>
+                <li>Actualizables: aviso</li>
+                <li>Errores de seguridad: aviso/error</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section
+          data-state="content"
+          data-auto-animate
+          data-auto-animate-id="test-aceptacion"
+        >
+          <h1>Más allá de PHPUnit</h1>
+          <h2>Tests de aceptación</h2>
+          <div>
+            Tests de funcionalidad del sitio escritos en lenguaje natural
+            (Behavior Driven Development)
+          </div>
+          <ul>
+            <li>Si todos pasan el proyecto está terminado</li>
+            <li>Usan un navegador que prueba el sitio</li>
+            <li>
+              Permite ejecutar PHP usando la API de Drupal
+              <ul>
+                <li>Crear entorno para el test</li>
+                <li>Testear condiciones</li>
+              </ul>
+            </li>
+            <li>
+              El lenguaje natural permite
+              <ul>
+                <li>Discutir tests con personal no técnico/cliente</li>
+                <li>Escribir tests sin tener código aún</li>
+                <li>Eliminar ambigüedad en requisitos</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section
+          data-state="content"
+          data-auto-animate
+          data-auto-animate-id="test-aceptacion"
+        >
+          <h1>Más allá de PHPUnit</h1>
+          <h2>Tests de aceptación</h2>
+          <div>Behat</div>
+          <ul>
+            <li>Integrado con Drupal: Behat Extension</li>
+            <li>
+              Muchos <em>contextos</em> disponibles...
+              <ul>
+                <li>
+                  <a href="https://github.com/nuvoleweb/drupal-behat"
+                    >nuvole/drupal-behat</a
+                  >
+                </li>
+                <li>
+                  <a href="https://github.com/Metadrop/behat-contexts"
+                    >Metadrop/behat-contexts</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              ...que ofrecen muchos pasos ya hechos
+              <ul>
+                <li>Aceptación de cookies</li>
+                <li>Módulo Groups</li>
+                <li>Medias</li>
+                <li>Paragraphs</li>
+                <li>Search API</li>
+                <li>...</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section data-auto-animate>
+          <img
+            src="./assets/images/img02-behat-example.png"
+            alt="Ejemplo de Behat"
+          />
+        </section>
+
+        <section
+          data-state="content"
+          data-auto-animate
+          data-background-video-loop
+          data-background-video="assets/videos/video_all_backstop_images_and_references.webm"
+          data-auto-animate-id="regresion-visual"
+          class="weight-left"
+        >
+          <h1>Más allá de PHPUnit</h1>
+          <h2>Regresión visual</h2>
+
+          <ul>
+            <li>Detección de errores visuales</li>
+            <li>Comparación de imágenes</li>
+            <li>BackstopJS</li>
+            <li>Ejecución mediante CLI</li>
+            <li>Informes en HTML</li>
+            <li>Informes formato JUnit (integración con CI)</li>
+          </ul>
+        </section>
+
+        <section
+          data-state="content"
+          data-auto-animate
+          data-background-video-loop
+          data-background-video="assets/videos/BackstopJS_error_and_diff.mp4"
+          data-auto-animate-id="regresion-visual"
+          class="weight-left"
+        >
+          <h1>Más allá de PHPUnit</h1>
+          <h2>Regresión visual</h2>
+
+          <ul>
+            <li>Generar previamente imágenes de referencia</li>
+            <li>Comparar las referencias con capturas durante el test</li>
+            <li>Restringir parte a comparar mediante selectores CSS</li>
+            <li>Grado de tolerancia a diferencias</li>
+            <li>Interacción mediante Puppeteer o Playwright</li>
+          </ul>
+        </section>
+
+        <section
+          data-state="content"
+          data-auto-animate
+          data-auto-animate-id="regresion-visual"
+        >
+          <h1>Más allá de PHPUnit</h1>
+          <h2>Regresión visual</h2>
+          <ul>
+            <li>
+              Testear componentes o partes, no páginas enteras
+              <ul>
+                <li>Screenshots más pequeños</li>
+                <li>Se encuentra el componente que falla más rápidamente</li>
+                <li>Repositorio más pequeño</li>
+                <li>
+                  Evitar problemas con partes que cambian (Ej. tonto: fecha)
+                </li>
+              </ul>
+            </li>
+            <li>
+              Animaciones o vídeos: pararlos en <em>onReady</em> y
+              <em>onBefore</em>
+            </li>
+            <li>Quitar <em>baner</em> de cookies y similares</li>
+          </ul>
+        </section>
+
+        <section
+          data-state="content"
+          data-background-image="assets/images/img10-accessibility.png"
+          data-background-position="98% 50%"
+          data-background-size="45%"
+          class="weight-leftmost"
+          data-auto-animate
+          data-auto-animate-id="accesibilidad"
+        >
+          <h1>Más allá de PHP Unit</h1>
+          <h2>Accesibilidad</h2>
+          <ul>
+            <li>Olvidada y menospreciada</li>
+            <li>Inclusividad</li>
+            <li>European Accessibility Act: obligatorio AA (junio - 2025)</li>
+            <li>España: Ley 11/2023, de 8 de mayo</li>
+            <li>
+              Revisar desde inicio de proyecto: corregir todo al final = ☠️
+            </li>
+            <li>Afecta a todas las capas (diseño, UX, funcionalidad, ...)</li>
+            <li>
+              Intuición suele fallar, revisar pronto, especialmente diseños
+            </li>
+            <li>Colores corporativos: pueden ser una trampa</li>
+          </ul>
+        </section>
+
+        <section
+          data-state="content"
+          data-background-image="assets/images/img03-wave-in-browser-bis.png"
+          data-background-position="90% 50%"
+          data-background-size="40%"
+          class="weight-left"
+          data-auto-animate
+          data-auto-animate-id="accesibilidad"
+        >
+          <h1>Más allá de PHP Unit</h1>
+          <h2>Accesibilidad</h2>
+          <div>WAVE</div>
+          <ul>
+            <li>Muy completo</li>
+            <li>Interfaz interactivo</li>
+            <li>Extensión para navegadores</li>
+            <li>Automatizable con subscripción</li>
+          </ul>
+        </section>
+
+        <section
+          data-state="content"
+          data-background-image="assets/images/img04-ibm-accessibility-asssement.png"
+          data-background-position="90% 50%"
+          data-background-size="40%"
+          class="weight-left"
+          data-auto-animate
+          data-auto-animate-id="accesibilidad"
+        >
+          <h1>Más allá de PHP Unit</h1>
+          <h2>Accesibilidad</h2>
+          <div>IBM Equal Access Accessibility Checker</div>
+          <ul>
+            <li>Muy completo</li>
+            <li>Muy buena documentación</li>
+            <li>Extensión para navegadores</li>
+            <li>Automatizable con paquete en GitHub</li>
+          </ul>
+        </section>
+
+        <section
+          data-state="content"
+          data-auto-animate
+          data-auto-animate-id="accesibilidad"
+        >
+          <h1>Más allá de PHP Unit</h1>
+          <h2>Accesibilidad</h2>
+          <div>Pa11y</div>
+          <ul>
+            <li>Herramienta en línea de comandos</li>
+            <li>Itera sobre una lista de páginas o sobre sitemap</li>
+            <li>Automatizable</li>
+            <li>Informes formato JUnit (integración con CI)</li>
+            <li>Requiere Node.js</li>
+            <li>Umbral de error configurable</li>
+          </ul>
+        </section>
+
+        <section
+          data-state="content"
+          data-background-image="assets/images/img07-unlighthouse.png"
+          data-background-position="90% 50%"
+          data-background-size="40%"
+          class="weight-left"
+        >
+          <h1>Más allá de PHPUnit</h1>
+          <h2>Corrección y calidad</h2>
+          <div>Análisis con Lighthouse</div>
+
+          <ul>
+            <li>Rendimiento</li>
+            <li>Accesiblidad</li>
+            <li>Aplicacones progresiva</li>
+            <li>SEO</li>
+            <li>
+              Unlighthouse
+              <ul>
+                <li>Usa Lighthouse pero testea un sitio</li>
+                <li>Autodescubrimiento o sitemap</li>
+                <li>Detecta patrones de URL para ahorrar tests</li>
+              </ul>
+            </li>
+
+            <li>Automatizable (CI)</li>
+          </ul>
+        </section>
+
+        <section
+          data-state="content"
+          data-background-image="assets/images/img05-gatling.png"
+          data-background-position="90% 50%"
+          data-background-size="40%"
+          class="weight-left"
+        >
+          <h1>Más allá de PHPUnit</h1>
+          <h2>Rendimiento y carga</h2>
+
+          <ul>
+            <li>Tiempos de respuesta</li>
+            <li>Límite de ruptura</li>
+            <li>
+              Automatizable para obtener una tendencia
+              <ul>
+                <li>Un cambio brusco en la tendencia indica algo a revisar</li>
+              </ul>
+            </li>
+            <li>
+              Herramientas
+              <ul>
+                <li>ab test: básico y funcional</li>
+                <li>Apache JMeter: potente, GUI, informes</li>
+                <li>Gatling: potente, código, informes</li>
+                <li>...</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section data-state="content">
+          <h1>Más allá de PHPUnit</h1>
+          <h2>API internas y externas</h2>
+          <div>Newman ejecuta colecciones de Postman desde la consola</div>
+          <ul>
+            <li>
+              Internas
+              <ul>
+                <li>Comprobar correcto funcionamiento</li>
+              </ul>
+            </li>
+          </ul>
+          <br />
+          <ul>
+            <li>
+              Externas
+              <ul>
+                <li>API externa rota, web rota</li>
+                <li>Protegerse ante problemas ajenos</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section data-state="content">
+          <h1>Más allá de PHPUnit</h1>
+          <h2>Cabeceras HTTP</h2>
+          <div>Revelan problemas internos importantes</div>
+          <ul>
+            <li>
+              Problemas de caché
+              <ul>
+                <li><pre>x-drupal-dynamic-cache: UNCACHEABLE</pre></li>
+                <li><pre>cache-control: no-cache</pre></li>
+                <li>...</li>
+              </ul>
+            </li>
+            <li>
+              Cabeceras de seguridad
+              <ul>
+                <li>HSTS, CSP, Permissions-Policy, etc</li>
+                <li>CORS, COEP, CORP, COOP, ...</li>
+                <li>...</li>
+              </ul>
+            </li>
+            <li>...</li>
+          </ul>
+        </section>
+
+        <section data-state="content" data-auto-animate>
+          <h1>Más allá de PHPUnit</h1>
+          <h2>Tests de humo</h2>
+          <div>
+            No hay un error catastrófico, el sitio no está <em>ardiendo</em>
+          </div>
+          <ul>
+            <li>Comprobar que el sitio está en pie</li>
+            <li>Comprobar funcionalidades críticas</li>
+            <li>Deben ser rápidos</li>
+            <li>No cambiar ni generar ninguna alteración</li>
+            <li>
+              Ejemplos:
+              <ul>
+                <li>Artefacto corrupto</li>
+                <li>Base de datos caída</li>
+                <li>Errores de red</li>
+                <li>Expedientes X varios</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section data-state="content">
+          <h1>Más allá de PHPUnit</h1>
+          <h2>Pruebas de despliegue</h2>
+          <ul>
+            <li>Momento crítico para un sitio web</li>
+            <li>
+              Actualizaciones de datos, cambios en librerías, nuevo código...
+            </li>
+            <li>Realizar simulación de despliegue en entorno de pruebas</li>
+            <li>Mismos datos que producción (o muy similares)</li>
+            <li>Posible entorno dedicado para ello</li>
+            <li>Despliegues sin sorpresas</li>
+          </ul>
+        </section>
+
+        <section
+          data-state="chapter"
+          data-background-image="./assets/images/deco-right-bottom.png"
+          data-background-size="12%"
+          data-background-position="right bottom"
+          data-background-color="#e8f7fc"
+        >
+          <h1>Cuándo y dónde testear</h1>
+        </section>
+
+        <section data-state="content" data-auto-animate>
+          <h1>Cuándo y dónde testear</h1>
+          <h2>Entorno de desarrollo local</h2>
+          <ul>
+            <li>Confirmar que no se han roto funcionalidades</li>
+            <li>
+              Tests de lanzamiento manual
+              <ul>
+                <li>Deben ser fáciles de lanzar</li>
+                <li>
+                  Tests disponibles
+                  <ul>
+                    <li>Tests de aceptación</li>
+                    <li>PHPUnit</li>
+                    <li>Regresión visual</li>
+                    <li>Rendimiento y carga</li>
+                    <li>Testeo de API</li>
+                    <li>Tests de humo</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section data-state="content" data-auto-animate>
+          <h1>Cuándo y dónde testear</h1>
+          <h2>Entorno de desarrollo local</h2>
+          <ul>
+            <li>Tests de lanzamiento automático</li>
+            <li>GrumpPHP en hook de pre-commit de Git</li>
+            <li>Rápidos</li>
+            <li>Muy rápidos</li>
+            <li>
+              Tests realizados
+              <ul>
+                <li>Análisis de código estático</li>
+                <li>Mensaje de <em>commit</em></li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section data-state="content">
+          <h1>Cuándo y dónde testear</h1>
+          <h2>Entorno de pruebas automáticas</h2>
+          <ul>
+            <li>Comprobar que una MR/PR no rompe nada</li>
+            <li><em>Post merge</em></li>
+            <li>
+              Tests disponibles
+              <ul>
+                <li>Análisis de código estático</li>
+                <li>Paquetería (seguridad y actualizaciones)</li>
+                <li>Tests de humo</li>
+                <li>Tests de aceptación</li>
+                <li>PHPUnit</li>
+                <li>Regresión visual</li>
+                <li>Rendimiento y carga (almacenar tendencia)</li>
+                <li>Testeo de API</li>
+                <li>Cabeceras HTTP</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section data-state="content" data-auto-animate>
+          <h1>Cuándo y dónde testear</h1>
+          <h2>Entorno de producción</h2>
+          <ul>
+            <li>Testear lo más crítico tras un despliegue</li>
+            <li>Adiós a la incertidumbre y el equipo probando manualmente</li>
+            <li>
+              Siempre tests no destructivos ni creativos (ni crean ni destruyen)
+            </li>
+            <li>NO es una monitorización</li>
+            <li>
+              Tests disponibles
+              <ul>
+                <li>Tests de humo</li>
+                <li>Tests de aceptación limitados</li>
+                <li>Regresión visual limitados</li>
+                <li>Rendimiento y carga (almacenar tendencia)</li>
+                <li>Testeo de API</li>
+                <li>Cabeceras HTTP</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section
+          data-state="chapter"
+          data-background-image="./assets/images/deco-right-bottom.png"
+          data-background-size="12%"
+          data-background-position="right bottom"
+          data-background-color="#e8f7fc"
+        >
+          <h1>Implementación</h1>
+        </section>
+
+        <section data-state="content">
+          <h1>Implementación</h1>
+          <h2>Herramientas</h2>
+          <div>
+            <ul>
+              <li>Behat</li>
+              <li>BackstopJS</li>
+              <li>WAVE</li>
+              <li>IBM Equal Access Accessibility Checker</li>
+              <li>Pa11y</li>
+              <li>ab test</li>
+              <li>Apache JMeter</li>
+              <li>Gatling</li>
+              <li>Newman</li>
+              <li>composer</li>
+            </ul>
+            <ul>
+              <li>PHPStan</li>
+              <li>Grumphp</li>
+              <li>phpqa</li>
+              <li>phpcs</li>
+              <li>phpmd</li>
+              <li>phplint</li>
+              <li>yamllint</li>
+              <li>jsonlint</li>
+              <li>parallel-lint</li>
+            </ul>
+          </div>
+        </section>
+
+        <section
+          data-state="content"
+          data-background-image="assets/images/img06-gitlab-templates.png"
+          data-background-position="95% 50%"
+          data-background-size="25%"
+        >
+          <h1>Implementación</h1>
+          <h2>Gitlab templates</h2>
+
+          <ul>
+            <li>Implementación de tests de Drupal.org</li>
+            <li>
+              <a href="https://www.drupal.org/project/gitlab_templates"
+                >GitLab Templates en Drupal.org</a
+              >
+            </li>
+            <li>Específico para GitLab</li>
+            <li>Análisis de código, PHPUnit, Nightwatch, etc</li>
+          </ul>
+        </section>
+
+        <section data-state="content">
+          <h1>Implementación</h1>
+          <h2>Aljibe</h2>
+
+          <ul>
+            <li>Conjunto de plugins de DDEV</li>
+            <li>Metadrop Boilerplate pasado a DDEV</li>
+            <li>Multisite</li>
+            <li>
+              Herramientas
+              <ul>
+                <li>Behat</li>
+                <li>BackstopJS</li>
+                <li>Unlighthouse</li>
+                <li>
+                  Análisis estático de código (PHPStan, phpcs, linters, etc)
+                </li>
+                <li>Integración con Git (GrumPHP)</li>
+              </ul>
+            </li>
+            <li>
+              <a href="https://github.com/Metadrop/ddev-aljibe/"
+                >https://github.com/Metadrop/ddev-aljibe/</a
+              >
+            </li>
+            <li>Estable, la base de nuestros proyectos</li>
+          </ul>
+        </section>
+
+        <section data-state="content" data-auto-animate>
+          <h1>Implementación</h1>
+          <h2>Herramientas de CI</h2>
+
+          <ul>
+            <li>GitLab</li>
+            <li>Jenkins</li>
+            <li>GitHub Actions</li>
+          </ul>
+        </section>
+
+        <section
+          data-state="chapter"
+          data-background-image="./assets/images/deco-right-bottom.png"
+          data-background-size="12%"
+          data-background-position="right bottom"
+          data-background-color="#e8f7fc"
+        >
+          <h1>Notas finales</h1>
+        </section>
+
+        <section
+          data-auto-animate
+          data-state="content"
+          data-background-size="20%"
+          data-background-position="95% 50%"
+        >
+          <h1>Notas finales</h1>
+          <h2>Más allá de PHPUnit</h2>
+
+          <ul>
+            <li>Análisis de código estático</li>
+            <li>Paquetería (seguridad y actualizaciones)</li>
+            <li>Tests de aceptación</li>
+            <li>Tests de regresión visual</li>
+            <li>Accesibilidad</li>
+            <li>Rendimiento, calidad y corrección</li>
+            <li>API internas y externas</li>
+            <li>Cabeceras HTTP</li>
+            <li>Tests de humo</li>
+            <li>Pruebas de despliegue</li>
+          </ul>
+        </section>
+
+        <section data-state="content" data-auto-animate>
+          <h1>Notas finales</h1>
+
+          <ul>
+            <li>¡Los tests tienen que estar en VERDE!</li>
+            <li>Automatizar todos los tests automatizables</li>
+            <li>Facilitar la ejecución de tests manuales</li>
+            <li>Todo posible error susceptible de ser testeado deberá serlo</li>
+            <li>Ponderar en función de la criticidad el sitio/funcionalidad</li>
+            <li>Vivir tranquilo</li>
+            <li>¿He dicho que los tests tienen que estar en VERDE?</li>
+          </ul>
+        </section>
+
+        <section
+          data-background-image="./assets/images/deco-right-bottom.png"
+          data-background-size="12%"
+          data-background-position="right bottom"
+          data-background-color="#fff"
+        >
+          <h1 class="xxlarge" style="margin-bottom: 20%">¿Preguntas?</h1>
+        </section>
+
+        <section
+          data-state="end"
+          data-background-image="./assets/images/deco-right-bottom.png"
+          data-background-size="12%"
+          data-background-position="right bottom"
+          data-background-color="#fff"
+        >
+          <h2>
+            Gracias a los sponsor <span class="hl">PLATINO</span>
+            <img src="./assets/images/platino.png" />
+          </h2>
+        </section>
+
+        <section
+          data-state="end"
+          data-background-image="./assets/images/deco-right-bottom.png"
+          data-background-size="12%"
+          data-background-position="right bottom"
+          data-background-color="#fff"
+        >
+          <h2>
+            Gracias a los sponsor <span class="hl">GOLD</span>,
+            <span class="hl">SILVER</span> y <span class="hl">BRONZE</span>
+            <img src="./assets/images/gold-silver-bronze.png" />
+          </h2>
+        </section>
+
+        <section
+          data-background-image="./assets/images/deco-right-bottom.png"
+          data-background-size="12%"
+          data-background-position="right bottom"
+          data-background-color="#fff"
+        >
+          <h1 class="xxxlarge" style="margin-bottom: 20%">¡Gracias!</h1>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
